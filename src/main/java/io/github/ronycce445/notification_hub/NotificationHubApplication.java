@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
 @SpringBootApplication
-public class NotificationHubApplication implements CommandLineRunner {
+public class NotificationHubApplication  {
 	private final NotificationService notificationService;
 
 	public NotificationHubApplication(NotificationService notificationService) {
@@ -23,12 +23,6 @@ public class NotificationHubApplication implements CommandLineRunner {
 
 	}
 
-	@Override
-	public void run(String... args) throws Exception{
-
-		System.out.println(notificationService.sendNotification());
-
-	}
 }
 
 

@@ -12,9 +12,9 @@ public class NotificationService  {
         this.emailProvider = emailProvider;
     }
 
-    public String sendNotification(){
+    public String sendNotification(String recipient){
        String providerResult = emailProvider.send();
-        return "Notification has been sent. Provider Says: " + providerResult;
+        return "Notification has been sent to "+recipient+". Provider Says: " + providerResult;
     }
 
 }
