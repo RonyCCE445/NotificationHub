@@ -20,6 +20,7 @@ public class NotificationHubApplication implements CommandLineRunner {
 		SpringApplication.run(NotificationHubApplication.class, args);
 
 
+
 	}
 
 	@Override
