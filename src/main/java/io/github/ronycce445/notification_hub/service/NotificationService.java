@@ -3,16 +3,18 @@ package io.github.ronycce445.notification_hub.service;
 import io.github.ronycce445.notification_hub.dto.NotificationRequest;
 import io.github.ronycce445.notification_hub.dto.NotificationResponse;
 import io.github.ronycce445.notification_hub.provider.EmailProvider;
-import org.springframework.beans.factory.annotation.Value;
+import io.github.ronycce445.notification_hub.provider.NotificationProvider;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class NotificationService {
 
-    private final EmailProvider emailProvider;
+    private final NotificationProvider notificationProvider;
 
-    public NotificationService(EmailProvider emailProvider) {
-        this.emailProvider = emailProvider;
+    public NotificationService(NotificationProvider notificationProvider) {
+
+        this.notificationProvider = notificationProvider;
     }
 
     public NotificationResponse sendNotification(String recipient) {
@@ -20,7 +22,7 @@ public class NotificationService {
 
         response.setStatus("SUCCESS");
         response.setRecipient(recipient);
-        response.setProvider(emailProvider.send());
+        response.setProvider(notificationProvider.send());
         response.setMessage("Notification has been sent successfully.");
 
         return response;
