@@ -5,6 +5,7 @@ import io.github.ronycce445.notification_hub.dto.NotificationResponse;
 import io.github.ronycce445.notification_hub.provider.EmailProvider;
 import io.github.ronycce445.notification_hub.provider.NotificationProvider;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,7 +13,7 @@ public class NotificationService {
 
     private final NotificationProvider notificationProvider;
 
-    public NotificationService(NotificationProvider notificationProvider) {
+    public NotificationService(@Qualifier("smsProvider")NotificationProvider notificationProvider) {
 
         this.notificationProvider = notificationProvider;
     }

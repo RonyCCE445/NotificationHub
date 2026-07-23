@@ -1,6 +1,7 @@
 package io.github.ronycce445.notification_hub.provider;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 @Service
