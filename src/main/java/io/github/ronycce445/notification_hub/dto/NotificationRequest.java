@@ -1,6 +1,8 @@
 package io.github.ronycce445.notification_hub.dto;
 
+import io.github.ronycce445.notification_hub.enums.Channel;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class NotificationRequest {
@@ -12,6 +14,8 @@ public class NotificationRequest {
     @NotBlank
     @Size(max = 100)
     String message;
+    @NotNull
+    private Channel channel;
 
     public String getRecipient() {
         return recipient;
@@ -37,5 +41,11 @@ public class NotificationRequest {
         this.message = message;
     }
 
+    public Channel getChannel() {
+        return channel;
+    }
 
+    public void setChannel(Channel channel) {
+        this.channel = channel;
+    }
 }

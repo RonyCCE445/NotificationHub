@@ -21,16 +21,6 @@ public class NotificationController {
         this.notificationService = notificationService;
     }
 
-    @GetMapping("/{recipient}")
-    public ResponseEntity<NotificationResponse> sendNotification(
-            @PathVariable String recipient) {
-
-        NotificationResponse response =
-                notificationService.sendNotification(recipient);
-
-        return ResponseEntity.ok(response);
-    }
-
     @PostMapping
     public ResponseEntity<NotificationResponse> sendNotification(
             @Valid @RequestBody NotificationRequest request) {
