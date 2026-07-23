@@ -1,8 +1,16 @@
 package io.github.ronycce445.notification_hub.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 public class NotificationRequest {
+    @NotBlank
     String recipient;
+    @NotBlank
+    @Size(max = 100)
     String subject;
+    @NotBlank
+    @Size(max = 100)
     String message;
 
     public String getRecipient() {
