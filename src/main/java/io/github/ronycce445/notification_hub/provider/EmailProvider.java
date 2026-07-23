@@ -1,11 +1,14 @@
 package io.github.ronycce445.notification_hub.provider;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmailProvider {
+    @Value("${notification.provider}")
+    private String providerName;
     public String send() {
-        return "Email Provider Ready";
+        return providerName;
     }
 }
 

@@ -3,6 +3,7 @@ package io.github.ronycce445.notification_hub.service;
 import io.github.ronycce445.notification_hub.dto.NotificationRequest;
 import io.github.ronycce445.notification_hub.dto.NotificationResponse;
 import io.github.ronycce445.notification_hub.provider.EmailProvider;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
