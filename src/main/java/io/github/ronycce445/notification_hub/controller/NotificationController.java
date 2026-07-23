@@ -30,6 +30,7 @@ public class NotificationController {
     @PostMapping
     public ResponseEntity<NotificationResponse> sendNotification(
             @Valid @RequestBody NotificationRequest request) {
+        System.out.println("Controller reached");
 
         NotificationResponse response =
                 notificationService.sendNotification(request);
